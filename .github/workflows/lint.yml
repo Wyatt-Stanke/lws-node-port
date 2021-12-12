@@ -32,8 +32,8 @@ jobs:
               if: steps.git-check.outputs.modified == 'true'
               uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                commit_message: Auto-Fix (Linting)
-                commit_user_name: LWS Auto-Linter
+                  commit_message: Auto-Fix (Linting)
+                  commit_user_name: LWS Auto-Linter
 
             - name: Tell people that they should be linting.
               id: lint-comment
