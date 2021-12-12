@@ -1,0 +1,48 @@
+name: Lint
+on: pull_request
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v2
+      with: 
+        node-version: 14
+
+    - name: Install yarn
+      id: install-yarn
+      run: npm install -g yarn
+
+    - name: Install packages
+      id: install-packages
+      run: yarn install --frozen-lockfile
+
+    - name: Lint
+      id: lint-files
+      run: yarn lint
+      
+    - name: Check for modified files
+      id: git-check
+      run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+
+    - name: Push changes (if there are any)
+      id: push-changes
+      if: steps.git-check.outputs.modified == 'true'
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh pr checkout ${{ github.event.pull_request.number }}
+        git push
+
+    - name: Tell people that they should be linting.
+      id: lint-comment
+        if: steps.git-check.outputs.modified == 'true'
+        uses: thollander/actions-comment-pull-request@v1.0.4
+        with:
+          message: |
+            \## Hello!
+            I'm here to remind you that you should be linting before pushing
+            To lint, just run `yarn lint`. Thanks! ✨
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
