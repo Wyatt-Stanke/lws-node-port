@@ -35,8 +35,8 @@ jobs:
               run: |
                   git fetch
                   git add .
-                  git commit "Lint fix"
                   gh pr checkout ${{ github.event.pull_request.number }}
+                  git commit "Lint fix"
                   git push
 
             - name: Tell people that they should be linting.
