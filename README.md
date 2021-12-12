@@ -1,3 +1,2 @@
-## Info
-
-This repo is broken down into multiple subfolders for better.
+# Letters With Strangers
+## TODO: Work on README.md
