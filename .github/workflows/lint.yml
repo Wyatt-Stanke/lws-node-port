@@ -33,7 +33,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-			      git add .
+                  git add .
                   gh pr checkout ${{ github.event.pull_request.number }}
                   git push
 
