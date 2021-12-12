@@ -35,6 +35,7 @@ jobs:
               run: |
                   git remote update
                   git fetch
+				  echo ${{ github.event.pull_request.number }}
                   gh pr checkout ${{ github.event.pull_request.number }}
                   git add .
                   git commit "Lint fix"
