@@ -33,9 +33,9 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
+                  gh pr checkout ${{ github.event.pull_request.number }}
                   git fetch
                   git add .
-                  gh pr checkout ${{ github.event.pull_request.number }}
                   git commit "Lint fix"
                   git push
 
