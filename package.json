@@ -1,23 +1,23 @@
 {
-  "name": "letters-with-strangers",
-  "version": "0.0.1-js_migration",
-  "description": "Cooperative word-forming, via Discord bot",
-  "main": "index.js",
-  "repository": "https://github.com/maxsaltonstall/letters-with-strangers",
-  "author": "maxsaltonstall",
-  "license": "Apache-2.0",
-  "private": false,
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "lint": "eslint --ext .js,.jsx --fix . && prettier --write ."
-  },
-  "devDependencies": {
-    "eslint": "^8.4.1",
-    "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.5.1"
-  },
-  "dependencies": {
-    "discord.js": "^13.3.1"
-  }
+	"name": "letters-with-strangers",
+	"version": "0.0.1-js_migration",
+	"description": "Cooperative word-forming, via Discord bot",
+	"main": "index.js",
+	"repository": "https://github.com/maxsaltonstall/letters-with-strangers",
+	"author": "maxsaltonstall",
+	"license": "Apache-2.0",
+	"private": false,
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js",
+		"lint": "eslint --ext .js,.jsx --fix . && prettier --write ."
+	},
+	"devDependencies": {
+		"eslint": "^8.4.1",
+		"eslint-config-prettier": "^8.3.0",
+		"prettier": "^2.5.1"
+	},
+	"dependencies": {
+		"discord.js": "^13.3.1"
+	}
 }
