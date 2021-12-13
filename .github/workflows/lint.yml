@@ -5,6 +5,7 @@ jobs:
     format:
         runs-on: ubuntu-latest
         steps:
+        name: Format
             - uses: actions/checkout@v2
 
             - uses: actions/setup-node@v2
