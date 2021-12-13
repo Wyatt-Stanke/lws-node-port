@@ -3,8 +3,7 @@ const { readFileSync, rename, writeFileSync } = import("node:fs");
 const inquirer = require("inquirer");
 
 const questions = [
-	{
-		type: "input",
+	{ type: "input",
 		name: "token",
 		message: "What token would you like to use for this bot?",
 	},
